@@ -640,7 +640,7 @@ class Document(SchemaDocument):
             #
             # if the value is a dict, we have a another structure to validate
             #
-            if isinstance(struct[key], SchemaProperties) or isinstance(struct[key], R):
+            if (isinstance(struct[key], SchemaProperties) or isinstance(struct[key], R) ) and key in doc:
                 # if struct[key] is a MongoDocument, so we have to convert it into the
                 # CustomType : R
                 if not isinstance(struct[key], R):
