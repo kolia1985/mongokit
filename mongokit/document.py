@@ -415,7 +415,7 @@ class Document(SchemaDocument):
             if uuid:
                 self['_id'] = unicode("%s-%s" % (self.__class__.__name__, uuid4()))
         self._process_custom_type('bson', self, self.structure)
-        id = self.collection.save(self, safe=safe, *args, **kwargs)
+        id = self.collection.save(self, *args, **kwargs)
         self._process_custom_type('python', self, self.structure)
 
     def delete(self):
